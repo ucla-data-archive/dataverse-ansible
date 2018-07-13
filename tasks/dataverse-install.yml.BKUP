@@ -17,17 +17,17 @@
     src: /tmp/dvinstall.zip
     remote_src: true
     dest: /tmp
-    
+- name: unzip dataverse installer to glassfish directory
+  unarchive:
+    src: /tmp/dvinstall.zip
+    remote_src: true
+    dest: /usr/local/glassfish4/glassfish/domains/domain1/applications
+
 - name: fix perms on dataverse-war
   file: path=/tmp/dvinstall/dataverse.war mode=0644
 
-
 - name: install jdbc driver
-  shell: "/bin/cp /tmp/dvinstall/dataverse.war {{ dataverse.glassfish.root }}/glassfish/lib/"
-
-#  20180713jmj   added to copy the war file to glassfish applications directory
-- name: copy war file to glassfish applications directory
-  shell: "/bin/cp /tmp/dvinstall/pgdriver/postgresql-9.1-902.jdbc4.jar {{ dataverse.glassfish.root }}/glassfish//domains/domain1/applications/dataverse.war"
+  shell: "/bin/cp /tmp/dvinstall/pgdriver/postgresql-9.1-902.jdbc4.jar {{ dataverse.glassfish.root }}/glassfish/lib/"
 
 - name: copy jhove config
   copy: src=jhove.conf dest={{ dataverse.glassfish.root }}/domains/glassfish/{{ dataverse.glassfish.domain }}/config/ owner=root group=root mode=0644
@@ -61,6 +61,5 @@
 - name: deploy dataverse.war
   become: yes
   become_user: "{{ dataverse.glassfish.user }}"
-# 20180713jmj  changed the line to look in the glassfish applications directory for the war file
 # shell: "nohup {{ dataverse.glassfish.root }}/bin/asadmin deploy /tmp/dvinstall/dataverse.war"
-  shell: "nohup {{ dataverse.glassfish.root }}/bin/asadmin deploy {{ dataverse.glassfish.root }}/glassfish/domains/domain1/applications/dataverse.war"
+  shell: "nohup {{ dataverse.glassfish.root }}/bin/asadmin deploy {{ dataverse.glassfish.root }}/glassfish/domains/domain1/applications/dvinstall/dataverse.war"
