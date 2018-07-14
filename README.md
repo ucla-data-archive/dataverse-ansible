@@ -1,6 +1,6 @@
 # Dataverse Ansible role
 
-### files changed:  
+### jmj files changed:  
 - dataverse-install.yml   
     - lines 27-30  add copy to glassfish application directory   
     - lines 64-66   change the line that looks for war file, changed to look in glassfish application directory   
