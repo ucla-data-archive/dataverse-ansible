@@ -10,7 +10,8 @@
   get_url:
     url: https://github.com/IQSS/dataverse/releases/download/v{{ dataverse.version }}/dvinstall.zip
     dest: /tmp
-    # checksum: sha1:7ef1fb48956cfd509e55488f2908e9a4ae923a45 # requires ansible ≥2.0
+# checksum: sha1:7ef1fb48956cfd509e55488f2908e9a4ae923a45 
+# requires ansible ≥2.0
 
 - name: unzip dataverse installer
   unarchive:
