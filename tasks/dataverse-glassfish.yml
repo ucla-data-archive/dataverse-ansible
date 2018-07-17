@@ -69,16 +69,11 @@
         owner=root group=root mode=0644
   when: ansible_os_family == "Debian"
 
-- name: check glassfish status 
-  service: name=glassfish state=started  enabled=yes
-  register: glassfish_status
-  
 - name: start glassfish with asadmin so subsequent Ansible-initiated restarts succeed on RedHat/CentOS
   become: yes
   become_user: "{{ dataverse.glassfish.user }}"
  # try restart rather than start
   shell: "nohup {{ dataverse.glassfish.root }}/bin/asadmin restart-domain"
-  when: not glassfish_status
   when: ansible_os_family == "RedHat" and
         ansible_distribution_major_version == "7"
 
