@@ -8,7 +8,7 @@ dataverse:
     blocked_endpoints: "admin,test"
     blocked_policy: "localhost-only"
     location: "http://localhost:8080/api"
-  copyright: "&copy; Your Institution"
+  copyright: "UCLA Library Data Archive"
   db: dvndb
   dbhost: localhost
   dbuser: dvnuser
@@ -32,7 +32,7 @@ dataverse:
     timeout: 180
   google_analytics_key:
   memheap: 1024
-  service_email: noreply@dataverse.yourinstitution.edu
+  service_email: jamison@library.ucla.edu
   service_name: localhost
   shibboleth:
     enabled: false

@@ -24,11 +24,12 @@
 
 
 - name: install jdbc driver
-  shell: "/bin/cp /tmp/dvinstall/dataverse.war {{ dataverse.glassfish.root }}/glassfish/lib/"
+  shell: "/bin/cp /tmp/dvinstall/pgdriver/postgresql-9.1-902.jdbc4.jar {{ dataverse.glassfish.root }}/glassfish/lib/"
 
 #  20180713jmj   added to copy the war file to glassfish applications directory
 - name: copy war file to glassfish applications directory
-  shell: "/bin/cp /tmp/dvinstall/pgdriver/postgresql-9.1-902.jdbc4.jar {{ dataverse.glassfish.root }}/glassfish//domains/domain1/applications/dataverse.war"
+  shell: "/bin/cp /tmp/dvinstall/dataverse.war {{ dataverse.glassfish.root }}/glassfish//domains/domain1/applications/dataverse.war"
+  
 
 - name: copy jhove config
   copy: src=jhove.conf dest={{ dataverse.glassfish.root }}/domains/glassfish/{{ dataverse.glassfish.domain }}/config/ owner=root group=root mode=0644
