@@ -14,14 +14,17 @@
 - include: dataverse-postgres.yml
   tags: postgres
 
+# ----- works up to here
+# must manually kill the glassfi+ process before rerunning
+#  when restarting must use sudo unless you su as glassfish 
 - include: dataverse-glassfish.yml
   tags: glassfish
 
 - include: dataverse-solr.yml
   tags: solr
 
-- include: dataverse-install.yml
-  tags: dataverse
+#- include: dataverse-install.yml
+#  tags: dataverse
 
-- include: dataverse-postinstall.yml
-  tags: postinstall
+#- include: dataverse-postinstall.yml
+#  tags: postinstall
