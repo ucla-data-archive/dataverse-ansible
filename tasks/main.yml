@@ -20,11 +20,12 @@
 - include: dataverse-glassfish.yml
   tags: glassfish
 
+# manually change the version of solr, 7.9 rather than 4.6.0
 - include: dataverse-solr.yml
   tags: solr
 
-#- include: dataverse-install.yml
-#  tags: dataverse
+- include: dataverse-install.yml
+  tags: dataverse
 
-#- include: dataverse-postinstall.yml
-#  tags: postinstall
+- include: dataverse-postinstall.yml
+  tags: postinstall
