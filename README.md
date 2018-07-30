@@ -1,13 +1,6 @@
 # Dataverse Ansible role
 
-### jmj files changed:  
-- dataverse-install.yml   
-    - lines 27-30  add copy to glassfish application directory   
-    - lines 64-66   change the line that looks for war file, changed to look in glassfish application directory   
-- dataverse-glassfish.yml  
-    - lines 74-76   change start to restart  
-    
-    
+
 This [Ansible][ansible] role aims to install [Dataverse][dataverse] and its prerequisites.   
 The role installs PostgreSQL, GlassFish and other prerequisites, then deploys Dataverse.
 
