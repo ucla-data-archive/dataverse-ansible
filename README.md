@@ -65,6 +65,8 @@ This is a community effort, written by [Don Sizemore][donsizemore] and wll inclu
 
 [![Build Status](https://travis-ci.org/IQSS/dataverse-ansible.svg?branch=master)](https://travis-ci.org/IQSS/dataverse-ansible)
 
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/ucla-data-archive/dataverse-ansible.svg?columns=all)](https://waffle.io/ucla-data-archive/dataverse-ansible)
+
 [ansible]: http://ansible.com
 [dataverse]: https://dataverse.org
 [iqss]: http://www.iq.harvard.edu
