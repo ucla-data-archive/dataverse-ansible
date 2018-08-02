@@ -72,5 +72,5 @@
   become: yes
   become_user: "{{ dataverse.glassfish.user }}"
 # 20180713jmj  changed the line to look in the glassfish applications directory for the war file
-# shell: "nohup {{ dataverse.glassfish.root }}/bin/asadmin deploy /tmp/dvinstall/dataverse.war"
+#  shell: "nohup {{ dataverse.glassfish.root }}/bin/asadmin deploy /tmp/dvinstall/dataverse.war"
   shell: "nohup {{ dataverse.glassfish.root }}/bin/asadmin deploy {{ dataverse.glassfish.root }}/glassfish/domains/domain1/applications/dataverse.war"
