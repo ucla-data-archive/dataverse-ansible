@@ -63,7 +63,7 @@ If you wish to clone an existing installation, you should perform the following 
 
 This is a community effort, written by [Don Sizemore][donsizemore] and wll include improvements from [Tim Dilauro][tdilauro]. The role is under active development - pull requests, suggestions and other contributions are welcome!
 
-[![Build Status](https://travis-ci.org/IQSS/dataverse-ansible.svg?branch=master)](https://travis-ci.org/IQSS/dataverse-ansible)
+[![Build Status](https://travis-ci.org/ucla-data-archive/dataverse-ansible.svg?branch=master)](https://travis-ci.org/ucla-data-archive/dataverse-ansible)
 
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/ucla-data-archive/dataverse-ansible.svg?columns=all)](https://waffle.io/ucla-data-archive/dataverse-ansible)
 
