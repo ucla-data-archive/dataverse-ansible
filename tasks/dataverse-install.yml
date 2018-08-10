@@ -22,17 +22,11 @@
 - name: fix perms on dataverse-war
   file: path=/tmp/dvinstall/dataverse.war mode=0644
 
-
 - name: install jdbc driver
-  shell: "/bin/cp /tmp/dvinstall/pgdriver/postgresql-9.1-902.jdbc4.jar {{ dataverse.glassfish.root }}/glassfish/lib/"
+  shell: "/bin/cp /tmp/dvinstall/pgdriver/postgresql-*.jar {{ dataverse.glassfish.root }}/glassfish/lib/"
 
-#  20180713jmj   added to copy the war file to glassfish applications directory
-- name: copy war file to glassfish applications directory
-  shell: "/bin/cp /tmp/dvinstall/dataverse.war {{ dataverse.glassfish.root }}/glassfish//domains/domain1/applications/dataverse.war"
-  
-
-- name: copy jhove config
-  copy: src=jhove.conf dest={{ dataverse.glassfish.root }}/domains/glassfish/{{ dataverse.glassfish.domain }}/config/ owner=root group=root mode=0644
+- name: copy jhove configs
+  shell: "cp /tmp/dvinstall/jhove* {{ dataverse.glassfish.root }}/glassfish/domains/{{ dataverse.glassfish.domain }}/config"
 
 - name: run glassfish-setup.sh
   shell: "cd /tmp/dvinstall && nohup ./glassfish-setup.sh > /tmp/glassfish-setup.out 2>&1"
@@ -60,14 +54,6 @@
   become_user: "{{ dataverse.glassfish.user }}"
   shell: "{{ dataverse.glassfish.root }}/bin/asadmin set-log-file-format {{ dataverse.glassfish.logformat }}"
 
-- name: try restarting before deploy
-  become: yes
-  become_user: "{{ dataverse.glassfish.user }}"
- # try restart rather than start
-  shell: "nohup {{ dataverse.glassfish.root }}/bin/asadmin restart-domain"
-  when: ansible_os_family == "RedHat" and
-        ansible_distribution_major_version == "7"
-        
 - name: deploy dataverse.war
   become: yes
   become_user: "{{ dataverse.glassfish.user }}"
