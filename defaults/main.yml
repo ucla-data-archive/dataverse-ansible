@@ -17,7 +17,7 @@ dataverse:
   demo: false
   doi:
     prefix: "10.5072/FK2"
-    protocol:
+    protocol: doi
     separator: "/"
     service: EZID
   filesdir: /usr/local/dvn/data
