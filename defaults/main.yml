@@ -2,7 +2,7 @@
 # dataverse/defaults/main.yml
 
 dataverse:
-  adminpass: notPr0d
+  adminpass: dvuser
   allow_signups: true
   api:
     blocked_endpoints: "admin,test"
@@ -28,7 +28,7 @@ dataverse:
     domain: domain1
     logformat: ulf
     adminuser: admin
-    adminpass: notPr0d
+    adminpass: dvuser
     timeout: 180
   google_analytics_key:
   memheap: 2048
@@ -37,7 +37,7 @@ dataverse:
   shibboleth:
     enabled: false
     repo: "http://download.opensuse.org/repositories/security:/shibboleth/CentOS_7/security:shibboleth.repo"
-  smtp: outlook.office365.com
+  smtp: smtp.gmail.com
   solr:
     group: solr
     root: /usr/local/solr
@@ -46,7 +46,9 @@ dataverse:
   thumbnails: true
   version: 4.9.2
 rserve:
-  host: ec2-54-219-54-246.us-west-1.compute.amazonaws.com
+==== BASE ====
+  host: rserve.yourinstitution.edu
+==== BASE ====
   user: rserve
   pass: rserve
   port: 6311

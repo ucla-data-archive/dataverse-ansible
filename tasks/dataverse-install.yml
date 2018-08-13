@@ -10,14 +10,15 @@
   get_url:
     url: https://github.com/IQSS/dataverse/releases/download/v{{ dataverse.version }}/dvinstall.zip
     dest: /tmp
-    # checksum: sha1:7ef1fb48956cfd509e55488f2908e9a4ae923a45 # requires ansible ≥2.0
+# checksum: sha1:7ef1fb48956cfd509e55488f2908e9a4ae923a45 
+# requires ansible ≥2.0
 
 - name: unzip dataverse installer
   unarchive:
     src: /tmp/dvinstall.zip
     remote_src: true
     dest: /tmp
-
+    
 - name: fix perms on dataverse-war
   file: path=/tmp/dvinstall/dataverse.war mode=0644
 
@@ -56,4 +57,6 @@
 - name: deploy dataverse.war
   become: yes
   become_user: "{{ dataverse.glassfish.user }}"
-  shell: "nohup {{ dataverse.glassfish.root }}/bin/asadmin deploy /tmp/dvinstall/dataverse.war"
+# 20180713jmj  changed the line to look in the glassfish applications directory for the war file
+#  shell: "nohup {{ dataverse.glassfish.root }}/bin/asadmin deploy /tmp/dvinstall/dataverse.war"
+  shell: "nohup {{ dataverse.glassfish.root }}/bin/asadmin deploy {{ dataverse.glassfish.root }}/glassfish/domains/domain1/applications/dataverse.war"

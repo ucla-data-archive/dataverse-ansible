@@ -24,7 +24,9 @@
   when: dataverse.solr.user != "root"
 
 - name: download and unzip solr
-  get_url: url="https://archive.apache.org/dist/lucene/solr/{{ dataverse.solr.version }}/solr-{{ dataverse.solr.version }}.tgz" dest=/tmp
+  get_url: 
+    url: "https://archive.apache.org/dist/lucene/solr/{{ dataverse.solr.version }}/solr-{{ dataverse.solr.version }}.tgz" 
+    dest: /tmp
 
 - name: untar solr
   shell: "tar xvzC /tmp -f /tmp/solr-{{ dataverse.solr.version }}.tgz"
@@ -115,5 +117,6 @@
   when: ansible_os_family == "RedHat" and
         ansible_distribution_major_version == "7"
 
+# collection1 seems to have been created in the previous step 114-117 - but doesn't create without the section below, not sure yet what is going on
 - name: create collection1 core
   shell: "/usr/bin/sudo -u {{ dataverse.solr.user }} {{ dataverse.solr.root }}/bin/solr create_core -c collection1 -d {{ dataverse.solr.root }}/server/solr/collection1/conf/"

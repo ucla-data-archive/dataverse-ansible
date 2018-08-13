@@ -1,6 +1,7 @@
 # Dataverse Ansible role
 
-This [Ansible][ansible] role aims to install [Dataverse][dataverse] and its prerequisites.
+
+This [Ansible][ansible] role aims to install [Dataverse][dataverse] and its prerequisites.   
 The role installs PostgreSQL, GlassFish and other prerequisites, then deploys Dataverse.
 
 Installation, customization, administration, and API documentation can be found in the [Dataverse 4 Guides](http://guides.dataverse.org/en/latest/).
@@ -62,7 +63,9 @@ If you wish to clone an existing installation, you should perform the following 
 
 This is a community effort, written by [Don Sizemore][donsizemore] and wll include improvements from [Tim Dilauro][tdilauro]. The role is under active development - pull requests, suggestions and other contributions are welcome!
 
-[![Build Status](https://travis-ci.org/IQSS/dataverse-ansible.svg?branch=master)](https://travis-ci.org/IQSS/dataverse-ansible)
+[![Build Status](https://travis-ci.org/ucla-data-archive/dataverse-ansible.svg?branch=master)](https://travis-ci.org/ucla-data-archive/dataverse-ansible)
+
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/ucla-data-archive/dataverse-ansible.svg?columns=all)](https://waffle.io/ucla-data-archive/dataverse-ansible)
 
 [ansible]: http://ansible.com
 [dataverse]: https://dataverse.org

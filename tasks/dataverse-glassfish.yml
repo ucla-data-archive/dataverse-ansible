@@ -1,5 +1,6 @@
 ---
 # dataverse/tasks/dataverse-glassfish.yml
+#   NOTE: the seems to require ipv6 disapled
 
 - name: download and unzip glassfish4
   get_url:
@@ -39,14 +40,14 @@
 
 - name: get patched weld jar
   get_url: url=http://central.maven.org/maven2/org/jboss/weld/weld-osgi-bundle/2.2.10.SP1/weld-osgi-bundle-2.2.10.SP1-glassfish4.jar
-        dest={{ dataverse.glassfish.root }}/glassfish/modules owner=root group=root mode=0644
+    dest={{ dataverse.glassfish.root }}/glassfish/modules owner=root group=root mode=0644
 
 - name: remove old grizzly jar
   file: name={{ dataverse.glassfish.root }}/glassfish/modules/glassfish-grizzly-extra-all.jar state=absent
 
 - name: get patched grizzly jar
   get_url: url=http://guides.dataverse.org/en/latest/_static/installation/files/issues/2180/grizzly-patch/glassfish-grizzly-extra-all.jar
-        dest={{ dataverse.glassfish.root }}/glassfish/modules owner=root group=root mode=0644
+    dest={{ dataverse.glassfish.root }}/glassfish/modules owner=root group=root mode=0644
 
 - name: install glassfish systemd conf file for RedHat / CentOS7
   template: src=glassfish.service.j2 dest=/usr/lib/systemd/system/glassfish.service
@@ -72,7 +73,8 @@
 - name: start glassfish with asadmin so subsequent Ansible-initiated restarts succeed on RedHat/CentOS
   become: yes
   become_user: "{{ dataverse.glassfish.user }}"
-  shell: "nohup {{ dataverse.glassfish.root }}/bin/asadmin start-domain"
+ # try restart rather than start
+  shell: "nohup {{ dataverse.glassfish.root }}/bin/asadmin restart-domain"
   when: ansible_os_family == "RedHat" and
         ansible_distribution_major_version == "7"
 

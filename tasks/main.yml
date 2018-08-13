@@ -14,9 +14,14 @@
 - include: dataverse-postgres.yml
   tags: postgres
 
+# ----- works up to here
+# must manually kill the glassfi+ process before rerunning
+#  when restarting must use sudo unless you su as glassfish 
 - include: dataverse-glassfish.yml
   tags: glassfish
 
+# manually change the version of solr, 7.9 rather than 4.6.0
+# Must manually kill/stop BOTH solr and glassfish before rerunning
 - include: dataverse-solr.yml
   tags: solr
 
