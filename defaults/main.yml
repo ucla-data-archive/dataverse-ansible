@@ -8,7 +8,7 @@ dataverse:
     blocked_endpoints: "admin,test"
     blocked_policy: "localhost-only"
     location: "http://localhost:8080/api"
-  copyright: "&copy; Your Institution"
+  copyright: "UCLA Data Science Center"
   db: dvndb
   dbhost: localhost
   dbuser: dvnuser
@@ -32,12 +32,12 @@ dataverse:
     timeout: 180
   google_analytics_key:
   memheap: 2048
-  service_email: noreply@dataverse.yourinstitution.edu
-  service_name: dataverse.yourinstitution.edu
+  service_email: jamison@library.ucla.edu
+  service_name: ec2-54-219-54-246.us-west-1.compute.amazonaws.com
   shibboleth:
     enabled: false
     repo: "http://download.opensuse.org/repositories/security:/shibboleth/CentOS_7/security:shibboleth.repo"
-  smtp: smtp.yourinstitution.edu
+  smtp: outlook.office365.com
   solr:
     group: solr
     root: /usr/local/solr
@@ -46,7 +46,7 @@ dataverse:
   thumbnails: true
   version: 4.9.2
 rserve:
-  host: rserve.yourinstitution.edu
+  host: ec2-54-219-54-246.us-west-1.compute.amazonaws.com
   user: rserve
   pass: rserve
   port: 6311
