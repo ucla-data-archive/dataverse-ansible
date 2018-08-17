@@ -1,6 +1,5 @@
 ---
 # dataverse/tasks/dataverse-glassfish.yml
-#   NOTE: the seems to require ipv6 disapled
 
 - name: download and unzip glassfish4
   get_url:

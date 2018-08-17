@@ -8,7 +8,7 @@ dataverse:
     blocked_endpoints: "admin,test"
     blocked_policy: "localhost-only"
     location: "http://localhost:8080/api"
-  copyright: "UCLA Data Science Center"
+  copyright: " University of California, Los Angeles"
   db: dvndb
   dbhost: localhost
   dbuser: dvnuser
@@ -46,9 +46,7 @@ dataverse:
   thumbnails: true
   version: 4.9.2
 rserve:
-==== BASE ====
-  host: rserve.yourinstitution.edu
-==== BASE ====
+  host: ec2-54-219-54-246.us-west-1.compute.amazonaws.com
   user: rserve
   pass: rserve
   port: 6311
