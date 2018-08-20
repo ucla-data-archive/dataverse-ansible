@@ -20,6 +20,8 @@ Example:
 ssh -i "~/.ssh/jmj-dataverse" ec2-user@54.67.118.35
 
 scp -i "~/.ssh/jmj-dataverse" ec2-user@54.67.118.35:/home/ec2-user/*.png .
+scp -i "~/.ssh/jmj-dataverse" temporaryUCLAdataverseLogo.png  ec2-user@54.67.118.35:/home/ec2-user/.
+
 
 Please note that in most cases the username above will be correct, however please ensure that you read your AMI usage instructions to ensure that the AMI owner has not changed the default AMI username.
 If you need any assistance connecting to your instance, please see our connection documentation.
