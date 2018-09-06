@@ -3,6 +3,14 @@
 
 #- name: restart solr
 #  service: name=solr state=restarted
+# 20180905jmj: before glassfish is stopped, add the jvm option dataverse.siteUrl
+# in the dataverse installer glassfish-setup.sh
+# ./asadmin $ASADMIN_OPTS create-jvm-options "\-Ddataverse.fqdn=${HOST_ADDRESS}"
+- name: add jvm option siteURL
+  become: yes
+  become_user: "{{ dataverse.glassfish.user }}"
+  command: nohup {{ dataverse.glassfish.root }}/bin/asadmin create-jvm-options '-Ddataverse\.siteUrl=http\://${dataverse.fqdn}\:8080'
+
 
 - name: stop glassfish manually (systemd gums up the works)
   become: yes
@@ -50,4 +58,3 @@
 
 - name: Fin
   debug: msg="Dataverse installation complete! Please check output logs in /tmp for further review."
-

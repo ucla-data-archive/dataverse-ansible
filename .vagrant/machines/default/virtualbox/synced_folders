@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/jmjamison/roles/dataverse-ansible2","disabled":false,"__vagrantfile":true},"/etc/ansible/roles/dataverse":{"guestpath":"/etc/ansible/roles/dataverse","hostpath":"/home/jmjamison/roles/dataverse-ansible2","disabled":false,"__vagrantfile":true}}}
-=======
-{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/jmjamison/roles/dataverse-ansible","disabled":false,"__vagrantfile":true},"/etc/ansible/roles/dataverse":{"guestpath":"/etc/ansible/roles/dataverse","hostpath":"/home/jmjamison/roles/dataverse-ansible","disabled":false,"__vagrantfile":true}}}
->>>>>>> d90d8645e75764aaef2f77118851e1dcdd4127f9
